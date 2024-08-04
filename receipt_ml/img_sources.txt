@@ -1,0 +1,27 @@
+Receipt image sources
+
+https://expressexpense.com/blog/free-receipt-images-ocr-machine-learning-dataset/
+https://huggingface.co/datasets/TrainingDataPro/ocr-receipts-text-detection/tree/main/data
+https://huggingface.co/datasets/mychen76/ds_receipts_v2_test/tree/main/data
+https://huggingface.co/datasets/mychen76/receipt_cord_ocr_v2/tree/main/data
+https://huggingface.co/datasets/AdamCodd/donut-receipts/tree/main
+https://huggingface.co/datasets/josephloh/donut-receipts100/tree/main/data
+https://huggingface.co/datasets/josephloh/donut-receipts123/tree/main/data
+https://huggingface.co/datasets/marcelomoreno26/processed-receipts/tree/main/data
+https://huggingface.co/datasets/dodogeny/receipts-dataset-v1/tree/main/data
+https://huggingface.co/datasets/mychen76/ds_receipts_v2_train/tree/main/data
+https://huggingface.co/datasets/mychen76/ds_receipts_v2_eval/tree/main/data
+https://huggingface.co/datasets/dajor85570/invoices-and-receipts_ocr_v1/tree/main/data
+https://huggingface.co/datasets/mychen76/invoices-and-receipts_ocr_v1/tree/main/data
+https://huggingface.co/datasets/josephloh/donut-receipts75/tree/main/data
+https://huggingface.co/datasets/ilhamxx/data_receipt/tree/main
+https://huggingface.co/datasets/amaye15/receipts-cropped/tree/main/data
+https://huggingface.co/datasets/ilhamxx/dataset_receipt/tree/main/data
+https://www.kaggle.com/datasets/mdhstama23/receipt-invoice-ml-ch2ps357
+https://www.kaggle.com/datasets/hariwh0/mcocr-scanned-receipt
+https://www.kaggle.com/datasets/bambotims/faded-receipts
+https://www.kaggle.com/datasets/dhiaznaidi/receiptdatasetssd300v2
+https://www.kaggle.com/datasets/dhiaznaidi/receiptdatasetssd300
+https://www.kaggle.com/datasets/marktomm/receipt-or-not
+https://www.kaggle.com/datasets/mirastokanov/receipt-classification-dataset
+https://www.kaggle.com/datasets/trainingdatapro/ocr-receipts-text-detection
