@@ -1,0 +1,7 @@
+.venv/
+**/.DS_Store
+
+receipt_ml/local_assets
+receipt_ml/image_dataset
+
+data_format.json
