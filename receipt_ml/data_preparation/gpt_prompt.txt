@@ -1,0 +1,41 @@
+Instructions:
+Extract all information from the above receipt to a JSON.
+The JSON must contain all fields listed below.
+If information is not found, write an empty string "".
+The is_taxed key should be boolean.
+Items are by default taxed, but if there is isolated abbreviated text next to the item name, it is not taxed.
+Be sure to extract everything, and any information that does not fit the fields below should be placed in the field called "extra".
+
+Fields:
+global_information:
+language
+currency
+
+store_information:
+store_name
+store_address
+
+purchase_information:
+date
+time
+subtotal
+tax
+total
+tip
+discount
+charges
+
+item_information:
+item_name
+quantity
+price
+is_taxed
+item_discount
+other_details
+
+payment_information:
+type
+amount
+change
+
+extra:
