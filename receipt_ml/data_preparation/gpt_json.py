@@ -24,7 +24,7 @@ def all_batch(img_files:list[Path], prompt:str):
             "method": "POST",
             "url": "/v1/chat/completions",
             "body": {
-                "model": "gpt-4o",
+                "model": "gpt-4o-mini",
                 "messages": [
                     {"role": "system", "content": "You are a helpful document parsing assistant."},
                     {"role": "user", 
@@ -64,10 +64,15 @@ def divide_list(src:list, n:int) -> list[list]:
 
     # compute chunk size
     size = len(src)
-    chunk_size = (size // n) + 1
+    q, r = divmod(size, n)
 
-    for i in range(0, size, chunk_size):
-        result.append(src[i:i+chunk_size])
+    for i in range(0, n):
+        if i < r:
+            result.append(src[0:(q+1)])
+            del src[0:(q+1)]
+        else:
+            result.append(src[0:q])
+            del src[0:q]
 
     return result
 
@@ -91,8 +96,8 @@ if __name__=="__main__":
     # delete the single batch file
     Path("batch_tasks.jsonl").unlink()
 
-    # divide up the jsonl data into appropriate size chunks (for this dataset, n=200)
-    n = 400
+    # divide up the jsonl data into appropriate size chunks (for this dataset, n=100)
+    n = 100
     batches = divide_list(data, n)
 
     # smaller batches directory
