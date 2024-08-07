@@ -4,3 +4,5 @@
 receipt_ml/local_assets
 receipt_ml/image_dataset
 receipt_ml/data_preparation/batches
+receipt_ml/gpt_results
+

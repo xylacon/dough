@@ -43,7 +43,7 @@ def all_batch(img_files:list[Path], prompt:str):
                         ]
                     },
                 ],
-                "max_tokens": 1000
+                "max_tokens": 2000
             }
         }
 
@@ -97,7 +97,7 @@ if __name__=="__main__":
     Path("batch_tasks.jsonl").unlink()
 
     # divide up the jsonl data into appropriate size chunks (for this dataset, n=100)
-    n = 100
+    n = 150
     batches = divide_list(data, n)
 
     # smaller batches directory
