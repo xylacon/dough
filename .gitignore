@@ -1,8 +1,9 @@
 .venv/
 **/.DS_Store
 
+api_keys.txt
+
 receipt_ml/local_assets
-receipt_ml/image_dataset
-receipt_ml/data_preparation/batches
-receipt_ml/data_preparation/gpt_results
-receipt_ml/data_preparation/gpt_errors.json
+receipt_ml/data_preparation/image_dataset
+receipt_ml/data_preparation/results.jsonl
+receipt_ml/data_preparation/errors.jsonl

@@ -1,0 +1,44 @@
+Instructions:
+Extract all information from the above receipt to a JSON.
+Parse as much information as possible.
+The JSON must contain all fields in the schema listed below.
+If information is not found, write a null value.
+The is_taxed key should be boolean.
+Items are by default taxed.
+If there is isolated abbreviated text next to the item name, it is not taxed.
+Be sure to extract everything.
+Any information that does not fit the fields below should be placed in the field called "extra", with their own subfields.
+
+JSON schema:
+global_information:
+language: str
+currency: str
+
+store_information:
+store_name: str
+store_address: str
+
+purchase_information:
+date: str
+time: str
+subtotal: float
+tax: float
+total: float
+tip: float
+discount: float
+charges: float
+
+item_information:
+item_name: str
+quantity: float
+price: float
+is_taxed: boolean
+item_discount: float
+other_details: str
+
+payment_information:
+type: str
+amount: float
+change: float
+
+extra:
