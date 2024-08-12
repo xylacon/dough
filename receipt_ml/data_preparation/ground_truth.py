@@ -1,12 +1,18 @@
 import os
-import time
 import json
+import time
 import google.generativeai as genai
 from PIL import Image
+from tqdm import tqdm
 from pathlib import Path
 
 
 def main(api_key:str, lower:int, upper:int, src:list, text_prompt:str):
+
+    # suppress warnings
+    os.environ["GRPC_VERBOSITY"] = "ERROR"
+    os.environ["GLOG_minloglevel"] = "2"
+
     # use the api key
     genai.configure(api_key=api_key)
 
@@ -18,7 +24,7 @@ def main(api_key:str, lower:int, upper:int, src:list, text_prompt:str):
     errors = []
 
     # grab responses from gemini
-    for i in range(start=lower, stop=upper):
+    for i in tqdm(range(lower, upper)):
         img_path = images_path[i]
 
         # open the image
@@ -31,7 +37,7 @@ def main(api_key:str, lower:int, upper:int, src:list, text_prompt:str):
         try:
             ans = json.loads(response.candidates[0].content.parts[0].text)
         except Exception as error:
-            errors.append({"file": str(img_path), "error": str(error), "response": response})
+            errors.append({"file": str(img_path), "error": str(error), "response": str(response)})
         
         # add succesful results
         results.append({"file": str(img_path), "response": ans})
@@ -49,6 +55,8 @@ def main(api_key:str, lower:int, upper:int, src:list, text_prompt:str):
         for img_error in errors:
             error_file.write(json.dumps(img_error) + "\n")
 
+    return None
+
 
 if __name__ == "__main__":
     # get API key from shell session
@@ -59,8 +67,8 @@ if __name__ == "__main__":
 
     # due to limits on API usage,
     # define the range of the images to be passed
-    lower = 0
-    upper = 1400
+    lower = 1400
+    upper = 2800
 
     # list of image paths
     images_path = [x for x in Path("image_dataset").rglob("*.jpg")]
